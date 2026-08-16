@@ -57,7 +57,7 @@ unifinder/
 ├── index.html      # Structure de la page
 ├── unifind.css      # Styles (thème catalogue de bibliothèque)
 ├── veille.js         # Logique JavaScript (fetch, filtrage, pagination, rendu)
-└── screenshots/       # Captures d'écran (à ajouter)
+└── screenshots/       # Captures d'écran 
 ```
 
 ---
@@ -70,7 +70,7 @@ Aucune dépendance ni installation n'est nécessaire — c'est une application 1
 
 1. Cloner ou télécharger le projet :
    ```bash
-   git clone https://github.com/<ton-utilisateur>/unifinder.git
+   git clone https://github.com/Nilde64/unifinder.git
    cd unifinder
    ```
 2. Double-cliquer sur `index.html` (ou l'ouvrir avec ton navigateur).
