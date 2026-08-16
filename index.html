@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Universities Search API</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- BARRE DE NAVIGATION -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <span class="brand-logo"> UniFinder</span>
+            <span class="brand-sub">Explorateur d'Universités</span>
+            <div class="nav-links">
+
+                <a href="#hero">Accueil</a>
+
+                <a href="#search-box">Recherche</a>
+
+                <a href="#universities">Universités</a>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- SECTION PRINCIPALE (PAGE D'ACCUEIL) -->
+    <main class="container">
+        <!-- HEADER D'ACCUEIL -->
+        <header id="hero" class="hero-section">
+            <h1>Trouvez votre <span>Université</span> dans le monde</h1>
+            <p>Recherchez un établissement par son nom ou directement par pays.</p>
+        </header>
+
+        <!-- ZONE DE RECHERCHE -->
+        <section id="search-box" class="search-box">
+            <div class="input-group">
+                <input type="text" id="countryInput" placeholder="Pays (ex: Senegal, France, Canada)..."
+                    autocomplete="off">
+            </div>
+            <div class="input-group">
+                <input type="text" id="nameInput" placeholder="Nom de l'université (optionnel)..." autocomplete="off">
+            </div>
+            <div class="actions">
+                <button id="searchBtn" class="btn btn-primary">🔎 Rechercher</button>
+                <button id="refreshBtn" class="btn btn-secondary" title="Actualiser la recherche">🔄 Actualiser</button>
+            </div>
+        </section>
+
+        <!-- ZONE DES RÉSULTATS -->
+        <section id="universities">
+
+            <!-- ZONE DU COMPTEUR DE RÉSULTATS -->
+            <div id="statsBar" class="stats-bar hidden"></div>
+
+            <!-- INDICATEUR DE CHARGEMENT -->
+            <div id="loading" class="state-box hidden">
+                <div class="spinner"></div>
+                <p>Chargement des universités en cours...</p>
+            </div>
+
+            <!-- MESSAGE D'ERREUR -->
+            <div id="errorMessage" class="state-box error-box hidden">
+                <span class="state-icon">⚠️</span>
+                <h3>Une erreur est survenue</h3>
+                <p id="errorText">Impossible de contacter l'API.</p>
+                <button onclick="handleSearch()" class="btn btn-retry">Réessayer</button>
+            </div>
+
+            <!-- MESSAGE AUCUN RÉSULTAT -->
+            <div id="emptyMessage" class="state-box hidden">
+                <span class="state-icon">🔎</span>
+                <h3>Aucun résultat trouvé</h3>
+                <p>Vérifiez l'orthographe du pays (de préférence en anglais, ex: <em>Senegal, Brazil</em>) ou du nom de
+                    l'établissement.</p>
+            </div>
+
+            <!-- GRILLE D'AFFICHAGE DES CARTES -->
+            <div id="universitiesGrid" class="universities-grid"></div>
+
+        </section>
+    </main>
+
+    <!-- PIED DE PAGE -->
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+                <h3>🎓 UniFinder</h3>
+                <p>
+                    Explorez les universités du monde entier
+                    en quelques clics.
+                </p>
+            </div>
+
+
+            <div class="footer-info">
+
+                <h4>À propos</h4>
+
+                <p>
+                    Application web de recherche d'universités
+                    développée avec HTML, CSS et JavaScript.
+                </p>
+
+            </div>
+
+
+            <div class="footer-api">
+
+                <h4>API utilisée</h4>
+
+                <p>
+                    🌐 Hipolabs Universities API
+                </p>
+
+                <p>
+                    Données récupérées en temps réel.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 <strong>UniFinder</strong>
+                — Tous droits réservés.
+            </p>
+
+            <p>
+                Projet académique • JavaScript & API REST
+            </p>
+
+        </div>
+
+    </footer>
+
+    <script src="veille.js"></script>
+</body>
+
+</html>

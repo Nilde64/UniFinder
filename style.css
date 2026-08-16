@@ -1,0 +1,1065 @@
+/* =========================================================
+   UNIFIND
+   Universités du monde entier
+   Direction : catalogue de bibliothèque — chic, académique
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+/* =========================
+   VARIABLES
+========================= */
+
+:root {
+    --navy: #16233c;
+    --navy-deep: #0e1826;
+    --navy-light: #2a3d61;
+
+    --cream: #f6f1e6;
+    --parchment: #fbf8f1;
+    --white: #ffffff;
+
+    --gold: #b8935a;
+    --gold-light: #ddbb85;
+    --gold-dim: rgba(184, 147, 90, 0.16);
+
+    --stamp: #8a4a3d;
+
+    --ink: #232a38;
+    --muted: #6f6a5e;
+
+    --border: #e3dac5;
+    --rule: rgba(184, 147, 90, 0.14);
+
+    --danger: #a94442;
+
+    --shadow: 0 8px 25px rgba(20, 25, 40, 0.08);
+    --shadow-lift: 0 20px 40px rgba(20, 25, 40, 0.14);
+
+    --radius: 14px;
+    --radius-sm: 8px;
+
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', Arial, sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+}
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+
+    background-color: var(--cream);
+    background-image:
+        radial-gradient(circle at 1px 1px, rgba(35, 42, 56, 0.05) 1px, transparent 0);
+    background-size: 26px 26px;
+
+    padding-top: 105px;
+}
+
+::selection {
+    background: var(--gold-light);
+    color: var(--navy-deep);
+}
+
+:focus-visible {
+    outline: 2.5px solid var(--gold);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    height: 105px;
+    overflow: hidden;
+    background-color: var(--navy);
+    color: white;
+    border-bottom: 3px solid var(--gold);
+}
+
+.navbar::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(14, 24, 38, 0.86), rgba(14, 24, 38, 0.90)),
+        url("https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1800&q=80");
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+}
+
+.nav-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1180px;
+    height: 100%;
+    margin: auto;
+    padding: 0 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-display);
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    color: white;
+}
+
+.brand-logo::before {
+    content: "🎓";
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    font-size: 19px;
+}
+
+.brand-sub {
+    font-family: var(--font-mono);
+    color: rgba(255, 255, 255, 0.68);
+    font-size: 12px;
+    padding-left: 20px;
+    border-left: 1px solid rgba(255, 255, 255, 0.35);
+    letter-spacing: 0.5px;
+}
+
+.nav-links {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.nav-links a {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--gold-light);
+}
+
+#hero,
+#search-box,
+#universities {
+    scroll-margin-top: 125px;
+}
+
+/* =========================
+   CONTAINER PRINCIPAL
+========================= */
+
+.container {
+    max-width: 1180px;
+    margin: auto;
+    padding: 65px 25px 80px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero-section {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 45px;
+}
+
+.hero-section::before {
+    content: "✦ ✦ ✦ ✦ ✦";
+    display: block;
+    color: var(--gold);
+    font-size: 20px;
+    letter-spacing: 6px;
+    margin-bottom: 14px;
+}
+
+.hero-section h1 {
+    font-family: var(--font-display);
+    font-size: clamp(38px, 5vw, 58px);
+    line-height: 1.15;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 15px;
+}
+
+.hero-section h1 span {
+    color: var(--gold);
+    font-style: italic;
+    font-weight: 600;
+}
+
+.hero-section p {
+    max-width: 620px;
+    margin: auto;
+    color: var(--muted);
+    font-size: 16px;
+}
+
+/* =========================
+   SEARCH BOX
+========================= */
+
+.search-box {
+    max-width: 1000px;
+    margin: 0 auto 35px;
+    padding: 22px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: flex-end;
+    gap: 14px;
+}
+
+/* =========================
+   INPUT GROUP
+========================= */
+
+.input-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.9px;
+    color: var(--navy);
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    height: 50px;
+    padding: 0 15px;
+    border: 1px solid #dcd8cf;
+    border-radius: var(--radius-sm);
+    background: #fcfbf8;
+    color: var(--ink);
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.input-group input::placeholder {
+    color: #a19a86;
+}
+
+.input-group input:hover,
+.input-group select:hover {
+    border-color: rgba(184, 149, 85, 0.45);
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px var(--gold-dim);
+    background: white;
+}
+
+/* =========================
+   ACTIONS
+========================= */
+
+.actions {
+    display: flex;
+    gap: 8px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn {
+    height: 50px;
+    padding: 0 20px;
+    border-radius: var(--radius-sm);
+    border: none;
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+}
+
+.btn-primary {
+    background: var(--navy);
+    color: white;
+    border: 1px solid var(--navy);
+}
+
+.btn-primary:hover {
+    background: var(--navy-light);
+    transform: translateY(-1px);
+    box-shadow: 0 5px 14px rgba(23, 36, 58, 0.2);
+}
+
+.btn-secondary {
+    background: white;
+    color: var(--navy);
+    border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    background: #fdfbf7;
+}
+
+.btn-retry {
+    margin-top: 1rem;
+    background: var(--danger);
+    color: white;
+    border: 1px solid var(--danger);
+}
+
+/* =========================
+   VOIR PLUS
+========================= */
+
+.load-more-btn {
+    display: flex;
+    width: fit-content;
+    margin: 36px auto 0;
+    padding: 0 30px;
+
+    background: white;
+    color: var(--navy);
+    border: 1.5px dashed var(--gold);
+    border-radius: 999px;
+
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    letter-spacing: 0.3px;
+
+    box-shadow: 0 4px 14px rgba(184, 147, 90, 0.14);
+}
+
+.load-more-btn:hover {
+    background: var(--gold-dim);
+    border-style: solid;
+    color: var(--navy);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(184, 147, 90, 0.24);
+}
+
+/* =========================
+   STATS
+========================= */
+
+.stats-bar {
+    max-width: 1180px;
+    margin: 0 auto 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.stats-bar::before {
+    content: "•";
+    color: var(--gold);
+    font-size: 20px;
+    line-height: 0;
+}
+
+.stat-number {
+    font-family: var(--font-mono);
+    color: var(--navy);
+    font-weight: 600;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.universities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px 24px;
+}
+
+/* =========================================================
+   UNIVERSITY CARD — style fiche de catalogue de bibliothèque
+========================================================= */
+
+.uni-card {
+    position: relative;
+    isolation: isolate;
+    margin-top: 16px;
+
+    background-color: var(--white);
+    background-image:
+        radial-gradient(24px 24px at 100% 100%, rgba(35, 26, 15, 0.14), transparent 72%),
+        linear-gradient(135deg, transparent 50%, var(--border) 50% 51%, var(--parchment) 51%),
+        repeating-linear-gradient(to bottom,
+            transparent 0,
+            transparent 27px,
+            var(--rule) 27px,
+            var(--rule) 28px);
+    background-repeat: no-repeat, no-repeat, repeat;
+    background-position: bottom right, bottom right, top left;
+    background-size: 30px 30px, 26px 26px, auto;
+
+    border: 1px solid var(--border);
+    border-radius: 15px 15px 15px 3px;
+    padding: 30px 24px 24px;
+    min-height: 268px;
+
+    display: flex;
+    flex-direction: column;
+
+    box-shadow: 0 1px 2px rgba(35, 26, 15, 0.05), 0 14px 30px -14px rgba(35, 26, 15, 0.28);
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+
+    opacity: 0;
+    animation: cardAppear 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation-delay: calc(var(--i, 0) * 50ms);
+}
+
+/* onglet de fiche, comme un guide de tiroir de catalogue */
+.uni-card::before {
+    content: "";
+    position: absolute;
+    top: -11px;
+    left: 26px;
+    width: 56px;
+    height: 16px;
+    background: linear-gradient(135deg, var(--gold-light), var(--gold));
+    border-radius: 5px 5px 0 0;
+    box-shadow: 0 -3px 6px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.45);
+    transition: box-shadow 0.35s ease;
+}
+
+/* perforation de la fiche */
+.uni-card::after {
+    content: "";
+    position: absolute;
+    top: 18px;
+    left: 20px;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, #ffffff, var(--cream) 72%);
+    box-shadow: 0 0 0 2px var(--border) inset, 0 1px 2px rgba(0, 0, 0, 0.18) inset;
+}
+
+.uni-card:hover {
+    transform: translateY(-7px) rotate(-0.25deg);
+    border-color: #d9cfba;
+    box-shadow: 0 2px 4px rgba(35, 26, 15, 0.07), 0 30px 50px -20px rgba(35, 26, 15, 0.34);
+}
+
+.uni-card:hover::before {
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.55);
+}
+
+.uni-card:hover .uni-stamp {
+    opacity: 1;
+    transform: rotate(-8deg) scale(1.06);
+}
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(18px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* tampon encré : indicatif pays, incliné */
+.uni-stamp {
+    position: absolute;
+    top: 20px;
+    right: 22px;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+
+    padding: 5px 10px;
+
+    border: 1.5px dashed var(--stamp);
+    border-radius: 50%;
+    color: var(--stamp);
+
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+
+    transform: rotate(-8deg);
+    opacity: 0.78;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* =========================
+   CARD HEADER
+========================= */
+
+.uni-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+
+    margin-left: 22px;
+    margin-bottom: 15px;
+    padding-right: 64px;
+    padding-bottom: 14px;
+    border-bottom: 1px dashed var(--border);
+}
+
+.uni-header-text {
+    min-width: 0;
+    flex: 1;
+}
+
+/* blason / logo de l'université, tiré du favicon de son domaine */
+.uni-crest {
+    position: relative;
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    background: var(--navy);
+    border: 1.5px solid var(--gold);
+    border-radius: 50%;
+    box-shadow: 0 3px 8px rgba(22, 35, 60, 0.18);
+}
+
+.uni-crest-fallback {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 17px;
+    color: var(--gold-light);
+}
+
+.uni-crest img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: white;
+    padding: 9px;
+}
+
+.skeleton-crest {
+    background: linear-gradient(90deg, var(--border) 25%, #f0ead9 50%, var(--border) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.4s ease-in-out infinite;
+    border-color: var(--border);
+}
+
+.uni-name {
+    font-family: var(--font-display);
+    font-size: 20.5px;
+    line-height: 1.32;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+    color: var(--navy);
+    margin-bottom: 11px;
+}
+
+.uni-country {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 12px;
+    background: var(--gold-dim);
+    color: #7a5f30;
+    border-radius: 20px;
+    font-size: 10.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.uni-country::before {
+    content: "";
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+}
+
+/* =========================
+   DETAILS — fiche façon table des matières
+========================= */
+
+.uni-details {
+    flex: 1;
+    margin-left: 22px;
+    padding-top: 2px;
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 22px;
+}
+
+.uni-details p {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 12px;
+}
+
+/* pointillés de repère, façon sommaire de bibliothèque */
+.uni-details p::before {
+    content: ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 3px;
+    color: var(--border);
+    letter-spacing: 1px;
+    white-space: nowrap;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.uni-details strong,
+.uni-details .call-number {
+    position: relative;
+    z-index: 1;
+    background: var(--white);
+}
+
+.uni-details strong {
+    padding-right: 8px;
+    color: var(--navy);
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    flex-shrink: 0;
+}
+
+.uni-details .call-number {
+    padding-left: 8px;
+    font-family: var(--font-mono);
+    color: var(--ink);
+    font-size: 12.5px;
+    text-align: right;
+}
+
+/* =========================
+   WEBSITE
+========================= */
+
+.uni-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-height: 44px;
+    margin-left: 22px;
+    padding: 10px 16px;
+    border: 1.5px solid var(--navy);
+    border-radius: 999px;
+    color: var(--navy);
+    background: white;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.1px;
+    transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease,
+        box-shadow 0.25s ease, transform 0.2s ease;
+}
+
+.uni-link:hover {
+    background: linear-gradient(135deg, var(--navy), var(--navy-light));
+    color: white;
+    box-shadow: 0 10px 20px -6px rgba(22, 35, 60, 0.45);
+    transform: translateY(-2px);
+}
+
+.uni-link.disabled {
+    background: #f3f3f1;
+    color: #999;
+    border-color: #ddd;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.uni-link.disabled:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+/* =========================
+   SKELETON (chargement)
+========================= */
+
+.uni-card.skeleton {
+    animation: none;
+    opacity: 1;
+    pointer-events: none;
+}
+
+.skeleton-line {
+    height: 12px;
+    border-radius: 4px;
+    background: linear-gradient(90deg, var(--border) 25%, #f0ead9 50%, var(--border) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.4s ease-in-out infinite;
+    margin-left: 20px;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* =========================
+   LOADING / ERROR / EMPTY
+========================= */
+
+.state-box {
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 55px 25px;
+    text-align: center;
+    background: var(--parchment);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.state-box h3 {
+    font-family: var(--font-display);
+    font-size: 20px;
+    color: var(--navy);
+    margin-bottom: 8px;
+}
+
+.state-box p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.state-icon {
+    display: block;
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 15px;
+    border: 3px solid #e9e5dc;
+    border-top-color: var(--gold);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.error-box {
+    background: #fff8f7;
+    border-color: #e9c8c5;
+    color: var(--danger);
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer {
+    margin-top: 80px;
+    background: var(--navy);
+    color: rgba(255, 255, 255, 0.72);
+    border-top: 3px solid var(--gold);
+    font-size: 13px;
+}
+
+.footer-container {
+    width: calc(100% - 50px);
+    max-width: 1180px;
+    margin: auto;
+    padding: 45px 0;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: 50px;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.footer-brand h3 {
+    margin-bottom: 12px;
+    color: white;
+    font-family: var(--font-display);
+    font-size: 24px;
+}
+
+.footer-brand p {
+    max-width: 300px;
+    line-height: 1.7;
+}
+
+.footer-info h4,
+.footer-api h4 {
+    margin-bottom: 12px;
+    color: var(--gold-light);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-info p,
+.footer-api p {
+    line-height: 1.7;
+    max-width: 320px;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    width: calc(100% - 50px);
+    max-width: 1180px;
+    margin: auto;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+}
+
+.footer-bottom strong {
+    color: white;
+}
+
+.footer-bottom p:last-child {
+    color: rgba(255, 255, 255, 0.45);
+}
+
+/* =====================================================
+   RESPONSIVE TABLETTE
+===================================================== */
+
+@media (max-width: 900px) {
+    .search-box {
+        flex-wrap: wrap;
+    }
+
+    .input-group {
+        min-width: 45%;
+    }
+
+    .actions {
+        width: 100%;
+    }
+
+    .actions .btn {
+        flex: 1;
+    }
+}
+
+/* =====================================================
+   RESPONSIVE MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+    body {
+        padding-top: 85px;
+    }
+
+    #hero,
+    #search-box,
+    #universities {
+        scroll-margin-top: 100px;
+    }
+
+    .navbar {
+        height: auto;
+        min-height: 85px;
+    }
+
+    .nav-container {
+        min-height: 85px;
+        padding: 0 1rem;
+        flex-wrap: wrap;
+    }
+
+    .brand-sub {
+        display: none;
+    }
+
+    .brand-logo {
+        font-size: 19px;
+    }
+
+    .brand-logo::before {
+        width: 38px;
+        height: 38px;
+    }
+
+    .container {
+        padding: 40px 1rem 60px;
+    }
+
+    .hero-section {
+        margin-bottom: 30px;
+    }
+
+    .hero-section h1 {
+        font-size: 34px;
+    }
+
+    .hero-section p {
+        font-size: 14px;
+    }
+
+    .search-box {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 14px;
+        border-radius: 16px;
+    }
+
+    .input-group {
+        min-width: 100%;
+    }
+
+    .actions {
+        width: 100%;
+    }
+
+    .actions .btn {
+        flex: 1;
+        padding: 0 12px;
+    }
+
+    .universities-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .uni-card {
+        padding: 26px 18px 18px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 35px 0;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+    }
+}
+
+/* =====================================================
+   ACCESSIBILITÉ — MOUVEMENT RÉDUIT
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .uni-card,
+    .spinner,
+    .skeleton-line {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .uni-card:hover,
+    .btn:hover,
+    .uni-link:hover {
+        transform: none !important;
+    }
+}
