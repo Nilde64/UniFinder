@@ -50,8 +50,23 @@
                 <input type="text" id="nameInput" placeholder="Nom de l'université (optionnel)..." autocomplete="off">
             </div>
             <div class="actions">
-                <button id="searchBtn" class="btn btn-primary">🔎 Rechercher</button>
-                <button id="refreshBtn" class="btn btn-secondary" title="Actualiser la recherche">🔄 Actualiser</button>
+                <button id="searchBtn" class="btn btn-primary">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="11" cy="11" r="6.5"></circle>
+                        <path d="m16 16 5 5"></path>
+                    </svg>
+                    Rechercher
+                </button>
+            
+                <button id="refreshBtn" class="btn btn-secondary" title="Actualiser la recherche">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20 11a8.1 8.1 0 0 0-14.8-4.4L3 9"></path>
+                        <path d="M3 4v5h5"></path>
+                        <path d="M4 13a8.1 8.1 0 0 0 14.8 4.4L21 15"></path>
+                        <path d="M21 20v-5h-5"></path>
+                    </svg>
+                    Actualiser
+                </button>
             </div>
         </section>
 
@@ -95,7 +110,18 @@
         <div class="footer-container">
 
             <div class="footer-brand">
-                <h3>🎓 UniFinder</h3>
+                <h3>
+                    <span class="footer-logo">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M2.5 9.5 12 5l9.5 4.5L12 14 2.5 9.5Z"></path>
+                            <path d="M6 11.5V15c0 1.8 2.7 3.5 6 3.5s6-1.7 6-3.5v-3.5"></path>
+                            <path d="M21.5 9.5v5"></path>
+                            <circle cx="21.5" cy="16" r="1"></circle>
+                        </svg>
+                    </span>
+                    UniFinder
+                </h3>
+            
                 <p>
                     Explorez les universités du monde entier
                     en quelques clics.
@@ -116,17 +142,24 @@
 
 
             <div class="footer-api">
-
+            
                 <h4>API utilisée</h4>
-
-                <p>
-                    🌐 Hipolabs Universities API
+            
+                <p class="api-name">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="12" cy="12" r="9"></circle>
+                        <path d="M3 12h18"></path>
+                        <path d="M12 3c2.5 2.5 3.5 5.5 3.5 9s-1 6.5-3.5 9"></path>
+                        <path d="M12 3c-2.5 2.5-3.5 5.5-3.5 9s1 6.5 3.5 9"></path>
+                    </svg>
+            
+                    Hipolabs Universities API
                 </p>
-
+            
                 <p>
                     Données récupérées en temps réel.
                 </p>
-
+            
             </div>
 
         </div>

@@ -299,8 +299,3 @@ nameInput.addEventListener('keyup', (e) => {
     if (e.key === 'Enter') handleSearch();
 });
 
-// Lancement au chargement de la page (Par défaut : Senegal)
-window.addEventListener('DOMContentLoaded', () => {
-    countryInput.value = 'Senegal';
-    handleSearch();
-});
