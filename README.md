@@ -55,7 +55,7 @@
 ```
 unifinder/
 ├── index.html      # Structure de la page
-├── unifind.css      # Styles (thème catalogue de bibliothèque)
+├── style.css      # Styles (thème catalogue de bibliothèque)
 ├── veille.js         # Logique JavaScript (fetch, filtrage, pagination, rendu)
 └── screenshots/       # Captures d'écran 
 ```
